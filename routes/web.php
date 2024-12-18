@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::prefix('user')->group(function () {
+    Route::get('/', [App\Http\Controllers\UserController::class, 'index'])->name('user.index');
+    Route::get('/create', [App\Http\Controllers\UserController::class, 'create'])->name('user.create');
+    Route::post('/store', [App\Http\Controllers\UserController::class, 'store'])->name('user.store');
+    Route::get('/edit/{id}', [App\Http\Controllers\UserController::class, 'edit'])->name('user.edit');
+    Route::post('/update/{id}', [App\Http\Controllers\UserController::class, 'update'])->name('user.update');
+    Route::get('/destroy/{id}', [App\Http\Controllers\UserController::class, 'destroy'])->name('user.destroy');
+});

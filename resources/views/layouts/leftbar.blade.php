@@ -19,12 +19,12 @@
                 <li class="xp-vertical-header">Master Data</li>
 
                 <li>
-                    <a href="">
+                    <a href="{{ route('user.index') }}">
                       <i class="icon-people"></i><span>Data User</span>
                   </a>
                 </li>
                
-                <li>
+                {{-- <li>
                   <a href="javaScript:void();">
                     <i class="icon-event"></i><span>Program PPSDM</span><i class="icon-arrow-right pull-right"></i>
                   </a>
@@ -35,15 +35,7 @@
                       <li><a href="">Sub Komponen</a></li>
                       <li><a href="">Detail Komponen</a></li>
                   </ul>
-                </li>
-
-
-                <li>
-                    <a href="">
-                      <i class="icon-wallet"></i><span>Mata Anggaran</span>
-                  </a>
-                </li>
-
+                </li> --}}
             </ul>
         </div>
         <!-- End XP Navigationbar -->
