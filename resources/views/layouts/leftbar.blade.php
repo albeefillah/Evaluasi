@@ -23,6 +23,11 @@
                       <i class="icon-people"></i><span>Data User</span>
                   </a>
                 </li>
+                <li>
+                    <a href="{{ route('eval-wi.index') }}">
+                      <i class="icon-note"></i><span>Evaluasi WI</span>
+                  </a>
+                </li>
                
                 {{-- <li>
                   <a href="javaScript:void();">

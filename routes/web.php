@@ -31,3 +31,12 @@ Route::prefix('user')->group(function () {
     Route::post('/update/{id}', [App\Http\Controllers\UserController::class, 'update'])->name('user.update');
     Route::get('/destroy/{id}', [App\Http\Controllers\UserController::class, 'destroy'])->name('user.destroy');
 });
+
+Route::prefix('eval-wi')->group(function () {
+    Route::get('/', [App\Http\Controllers\EvaluasiController::class, 'index'])->name('eval-wi.index');
+    Route::get('/create', [App\Http\Controllers\EvaluasiController::class, 'create'])->name('eval-wi.create');
+    Route::post('/store', [App\Http\Controllers\EvaluasiController::class, 'store'])->name('eval-wi.store');
+    Route::get('/edit/{id}', [App\Http\Controllers\EvaluasiController::class, 'edit'])->name('eval-wi.edit');
+    Route::post('/update/{id}', [App\Http\Controllers\EvaluasiController::class, 'update'])->name('eval-wi.update');
+    Route::get('/destroy/{id}', [App\Http\Controllers\EvaluasiController::class, 'destroy'])->name('eval-wi.destroy');
+});

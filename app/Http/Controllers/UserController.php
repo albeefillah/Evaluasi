@@ -65,7 +65,15 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $user = User::find($id);
+        $user->update([
+            'name'  => $request['name'],
+            'email' => $request['email'],
+            'password' => bcrypt($request['password'])
+        ]);
+
+        session()->flash('success','Data berhasil diubah.');
+        return redirect()->route('user.index');
     }
 
     /**
