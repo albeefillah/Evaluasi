@@ -33,7 +33,25 @@ class EvaluasiController extends Controller
      */
     public function storeWI(Request $request)
     {
-        return $request;
+
+        $evalWI = EvaluasiWI::create([
+            'id_user' => $request['id_user'],
+            'ket_pengajar' => $request['ket_pengajar'],
+            'nama_pelatihan' => $request['nama_pelatihan'],
+            'penguasaan_materi' => $request['penguasaan_materi'],
+            'cara_jawab_pertanyaan' => $request['cara_jawab_pertanyaan'],
+            'sistematika_penyajian' => $request['sistematika_penyajian'],
+            'menyajikan_materi' => $request['menyajikan_materi'],
+            'metode_sarana_pemb' => $request['metode_sarana_pemb'],
+            'kualitas_bahan_tayang' => $request['kualitas_bahan_tayang'],
+            'pemberian_motivasi' => $request['pemberian_motivasi'],
+            'ketepatan_waktu_materi' => $request['ketepatan_waktu_materi'],
+            'penggunaan_bahasa' => $request['penggunaan_bahasa'],
+            'bulan' => $request['bulan'], 
+        ]);
+
+        session()->flash('success','Data Berhasil Ditambahkan!');
+        return redirect()->route('eval-wi.index');
     }
 
     /**
@@ -49,7 +67,10 @@ class EvaluasiController extends Controller
      */
     public function editWI(string $id)
     {
-        //
+        $evalWI = EvaluasiWI::find($id);
+        $user = User::all();
+
+        return view('evaluasi.wi.edit', compact('evalWI', 'user'));
     }
 
     /**
@@ -57,7 +78,25 @@ class EvaluasiController extends Controller
      */
     public function updateWI(Request $request, string $id)
     {
-        //
+        $evalWI = EvaluasiWI::find($id);
+        $evalWI->update([
+            'id_user' => $request['id_user'],
+            'ket_pengajar' => $request['ket_pengajar'],
+            'nama_pelatihan' => $request['nama_pelatihan'],
+            'penguasaan_materi' => $request['penguasaan_materi'],
+            'cara_jawab_pertanyaan' => $request['cara_jawab_pertanyaan'],
+            'sistematika_penyajian' => $request['sistematika_penyajian'],
+            'menyajikan_materi' => $request['menyajikan_materi'],
+            'metode_sarana_pemb' => $request['metode_sarana_pemb'],
+            'kualitas_bahan_tayang' => $request['kualitas_bahan_tayang'],
+            'pemberian_motivasi' => $request['pemberian_motivasi'],
+            'ketepatan_waktu_materi' => $request['ketepatan_waktu_materi'],
+            'penggunaan_bahasa' => $request['penggunaan_bahasa'],
+            'bulan' => $request['bulan'], 
+        ]);
+
+        session()->flash('success','Data Berhasil Diubah!');
+        return redirect()->route('eval-wi.index');
     }
 
     /**
@@ -65,6 +104,11 @@ class EvaluasiController extends Controller
      */
     public function destroyWI(string $id)
     {
-        //
+        $evalWI = EvaluasiWI::find($id);
+        $evalWI->delete();
+
+        session()->flash('success','Data Berhasil Dihapus!');
+        return redirect()->back();
+
     }
 }

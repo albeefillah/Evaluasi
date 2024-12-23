@@ -21,7 +21,7 @@
         font-family: 'Gill Sans', sans-serif;
     }
     body, head{
-        font-size: 1    3px;
+        font-size: 13px;
     }
         </style>
         <!-- End CSS -->

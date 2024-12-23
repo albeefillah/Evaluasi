@@ -63,6 +63,11 @@ SiARTUR - Tambah Data Evaluasi Widyaiswara
                         <label for="nama_pelatihan">Nama Pelatihan</label>
                         <input type="text" required name="nama_pelatihan" class="form-control" id="nama_pelatihan" placeholder="Masukan Nama Pelatihan">
                     </div>
+                    
+                    <div class="form-group">
+                        <label for="bulan">Tanggal pelaksanaan</label>
+                        <input type="date" required name="bulan" class="form-control" id="bulan" required>
+                    </div>
 
                     <div class=" col-md-2 mt-5">
                         <h5 class="card-title text-black pl-1"> Form Penilaian </h5>
