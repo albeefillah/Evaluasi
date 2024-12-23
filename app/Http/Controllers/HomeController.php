@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\EvaluasiWI;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $evalWi = EvaluasiWI::where('ket_pengajar','WI PPSDMA')->get();
+
+        return view('home', compact('evalWi'));
     }
 }
